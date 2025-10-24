@@ -22,10 +22,6 @@ public class AnagramSolution implements BehaviourAnagramSolution {
             hmap.computeIfAbsent(key, k -> new ArrayList<>()).add(word);
         }
 
-        for (List<String> group : hmap.values()) {
-            System.out.println(String.join(" ", group));
-        }
-
         return hmap;
     }
 }

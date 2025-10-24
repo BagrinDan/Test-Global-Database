@@ -32,8 +32,8 @@ public class AnagramController {
 
     // Return anogram list
     @GetMapping("/list")
-    public Map<String, List<String>> anagramSolution(){
-
-        return behaviourAnagramSolution.AnagramSortMethod(answer);
+    public List<List<String>> anagramSolution(){
+        Map<String, List<String>> result = behaviourAnagramSolution.AnagramSortMethod(answer);
+        return new ArrayList<>(result.values());
     }
 }
