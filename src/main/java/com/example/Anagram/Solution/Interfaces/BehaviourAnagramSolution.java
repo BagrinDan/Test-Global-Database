@@ -1,5 +1,8 @@
 package com.example.Anagram.Solution.Interfaces;
 
-public class BehaviourAnagramSolution {
+import java.util.List;
+import java.util.Map;
 
+public interface BehaviourAnagramSolution {
+    Map<String, List<String>> AnagramSortMethod(List<String> words);
 }
