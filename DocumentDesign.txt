@@ -1,0 +1,39 @@
+
+# ===========================
+#  Document Design Decisions
+# ===========================
+
+1. Approach
+The solution separates responsibilities between two components.
+	+ Python Scripts - Responsible for reading the input file (sample.txt) and sending its contents via a REST API to the Java Spring Boot application. 
+This keeps file handling and I/O simple and allows reuse of Python's straightforward file processing.
+	+ Spring Boot Application - Receives the list of words from Python, groups anagrams, and exposes them via HTTP endpoints. 
+This centralizes the core business logic in a maintainable Java backend.
+
+
+
+2.1 Maintainability
+File reading is handled in Python, anagram logic in Java Spring Boot. Each component is simple and self-contained, making it easy to modify or extend without affecting the other.
+Methods are small, with clear responsibilities (FileReader reads files, AnagramSolution groups anagrams). Variable names are descriptive.
+
+2.2 Scalability
+Grouping by sorted character arrays or frequency arrays allows processing each word once. This scales linearly with the number of words (O(n * m log m) for sorting each word of length m).
+For 10 million words, the current approach works in-memory. For 100 billion words, distributed frameworks like Apache Spark or Hadoop would be required to process data in chunks across multiple nodes.
+
+2.3 Performance
+Sorting word characters or using frequency arrays avoids nested loops comparing each word with every other word.
+Maps store groups efficiently. Only one copy of each word is stored in memory.
+
+
+3. External Libraries
++ Python requests - Handles HTTP POST requests to send data to Spring Boot. Chosen for simplicity, reliability, and wide adoption.
++ Spring Boot - Provides REST API, dependency injection, and project structure. Eliminates boilerplate HTTP handling code and simplifies scaling in the future.
+
+
+
+4. Scalability Considerations
+Handling 10 million words:
+The current in-memory algorithm (grouping words by sorted characters or frequency arrays) can handle up to 10 million words efficiently on a modern machine. Each word is processed once, and the HashMap stores groups of anagrams without redundant comparisons, providing linear scalability with respect to the number of words.
+
+Handling 100 billion words:
+Processing 100 billion words in memory is impractical. To scale to this level, the solution would need distributed computing frameworks such as Apache Spark or Hadoop.
