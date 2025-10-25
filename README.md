@@ -8,30 +8,6 @@ This Spring Boot application provides a REST API to receive a list of words and 
 The backend is designed to work together with Python scripts that read input files and send them via HTTP requests.
 
 
-## Project Structure
-
-├── PythonsScripts
-│   ├── FileReader.py
-│   ├── __pycache__
-│   │   └── FileReader.cpython-313.pyc
-│   ├── sample.txt
-│   └── SendWordsAPI.py
-├── README.md
-├── src
-│   ├── main
-│   │   ├── java
-│   │   │   └── com
-│   │   │       └── example
-│   │   │           └── Anagram
-│   │   │               ├── AnagramApplication.java
-│   │   │               ├── Controllers
-│   │   │               │   └── AnagramController.java
-│   │   │               └── Solution
-│   │   │                   ├── AnagramSolution.java
-│   │   │                   └── Interfaces
-│   │   │                       └── BehaviourAnagramSolution.java
-
-
 # Anagram Finder Project
 
 This project demonstrates an anagram finder application using a combination of Spring Boot (Java) and Python. The Python scripts read an input file and send its contents to the Spring Boot application via a REST API. The Spring Boot service groups the words into anagrams and exposes them via an endpoint.
