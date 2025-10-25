@@ -26,3 +26,18 @@ replay_pid*
 
 __pycache__/
 *.pyc
+# Python
+__pycache__/
+*.pyc
+
+# IDE
+.idea/
+*.iml
+
+# Spring / Java
+target/
+*.log
+
+# OS files
+.DS_Store
+
