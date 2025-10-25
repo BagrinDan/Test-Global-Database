@@ -10,6 +10,26 @@ The backend is designed to work together with Python scripts that read input fil
 
 ## Project Structure
 
+├── PythonsScripts
+│   ├── FileReader.py
+│   ├── __pycache__
+│   │   └── FileReader.cpython-313.pyc
+│   ├── sample.txt
+│   └── SendWordsAPI.py
+├── README.md
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── example
+│   │   │           └── Anagram
+│   │   │               ├── AnagramApplication.java
+│   │   │               ├── Controllers
+│   │   │               │   └── AnagramController.java
+│   │   │               └── Solution
+│   │   │                   ├── AnagramSolution.java
+│   │   │                   └── Interfaces
+│   │   │                       └── BehaviourAnagramSolution.java
 
 
 # Anagram Finder Project
@@ -38,11 +58,12 @@ This project demonstrates an anagram finder application using a combination of S
    ```bash
    ./mvnw spring-boot:run
 
+   or by IntelijIdea
 
-2. Navigate to the Global/ directory (where the Python scripts are located).
+2. Navigate to the PythonScripts/ directory (where the Python scripts are located).
 
-3. Run the SendWordsAPI.py:
+3. Run the SendWordsAPI.py. 
 
-4. Write file path (sample will be in same direcotry, so you need just to write file name)
+4. Write file path (sample.txt will be in same direcotry, so you need just to write file name)
 
-5. Navigate to http://localhost:8080/list to see re result
+5. Navigate to http://localhost:8080/list to see result
