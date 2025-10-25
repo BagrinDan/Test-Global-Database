@@ -24,6 +24,8 @@ hs_err_pid*
 replay_pid*
 
 
+__pycache__/
+*.pyc
 # Python
 __pycache__/
 *.pyc
